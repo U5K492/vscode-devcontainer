@@ -1,0 +1,28 @@
+{
+  "name": "vscode-devcontainer",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "user": "${localEnv:USER}"
+    }
+  },
+  "remoteUser": "${localEnv:USER}",
+  "updateRemoteUserUID": true,
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim"
+      },
+      "extensions": [
+        "asvetliakov.vscode-neovim",
+        "ms-vsliveshare.vsliveshare",
+        "usernamehw.errorlens",
+        "eamodio.gitlens",
+        "streetsidesoftware.code-spell-checker",
+        "IBM.output-colorizer"
+      ]
+    }
+  },
+  "features": {},
+  "runArgs": ["--network=host"]
+}
