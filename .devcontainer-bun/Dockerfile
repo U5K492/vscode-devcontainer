@@ -1,5 +1,5 @@
-FROM --platform=linux/amd64 node:bookworm-slim as node
-FROM --platform=linux/amd64 debian:bookworm-slim
+FROM node:bookworm-slim as node
+FROM debian:bookworm-slim
 
 ARG user
 
@@ -29,3 +29,13 @@ RUN npm i -g bun
 RUN curl -LO https://github.com/neovim/neovim/releases/download/v0.10.1/nvim-linux64.tar.gz && \
     tar xzvf nvim-linux64.tar.gz && \
     sudo ln -s /nvim-linux64/bin/nvim /usr/local/bin/nvim
+
+## arm64 nvim build setting
+# RUN sudo apt update && apt install -y --no-install-recommends \
+#     ninja-build gettext cmake unzip build-essential ca-certificates
+#
+# RUN git clone https://github.com/neovim/neovim.git && \
+#     cd neovim && \
+#     git checkout stable && \
+#     make CMAKE_BUILD_TYPE=RelWithDebInfo && \
+#     sudo make install

@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/sdk:8.0
+FROM mcr.microsoft.com/dotnet/sdk:8.0.303-bookworm-slim
 
 ARG user
 
@@ -22,3 +22,13 @@ RUN useradd -m -s /bin/bash ${user} && \
 RUN curl -LO https://github.com/neovim/neovim/releases/download/v0.10.1/nvim-linux64.tar.gz && \
     tar xzvf nvim-linux64.tar.gz && \
     sudo ln -s /nvim-linux64/bin/nvim /usr/local/bin/nvim
+
+## arm64 nvim build setting
+# RUN sudo apt update && apt install -y --no-install-recommends \
+#     ninja-build gettext cmake unzip build-essential ca-certificates
+#
+# RUN git clone https://github.com/neovim/neovim.git && \
+#     cd neovim && \
+#     git checkout stable && \
+#     make CMAKE_BUILD_TYPE=RelWithDebInfo && \
+#     sudo make install
