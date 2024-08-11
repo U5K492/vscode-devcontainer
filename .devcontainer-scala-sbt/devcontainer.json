@@ -11,7 +11,8 @@
   "customizations": {
     "vscode": {
       "settings": {
-        "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim"
+        "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
+        "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim"
       },
       "extensions": [
         "asvetliakov.vscode-neovim",
@@ -27,5 +28,8 @@
     }
   },
   "features": {},
-  "runArgs": ["--network=host"]
+  "runArgs": [
+    "--network=host",
+    "--name=vscode-devcontainer-scala-sbt"
+  ]
 }
