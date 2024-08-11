@@ -11,7 +11,8 @@
   "customizations": {
     "vscode": {
       "settings": {
-        "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim"
+        "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
+        "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim"
       },
       "extensions": [
         "asvetliakov.vscode-neovim",
@@ -22,10 +23,18 @@
         "usernamehw.errorlens",
         "eamodio.gitlens",
         "streetsidesoftware.code-spell-checker",
-        "IBM.output-colorizer"
+        "IBM.output-colorizer",
+        "dzhavat.bracket-pair-toggler",
+        "donjayamanne.githistory",
+        "mhutchie.git-graph",
+        "oderwat.indent-rainbow"
       ]
     }
   },
    "features": {},
-  "runArgs": ["--network=host"]
+  "runArgs": [
+    "--network=host",
+    "--name=vscode-devcontainer-fsharp"
+  ]
 }
+
