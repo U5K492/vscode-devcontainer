@@ -15,19 +15,9 @@
         "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim"
       },
       "extensions": [
-        "asvetliakov.vscode-neovim",
         "formulahendry.dotnet-test-explorer",
         "Ionide.Ionide-fsharp",
-        "ms-dotnettools.csharp",
-        "ms-vsliveshare.vsliveshare",
-        "usernamehw.errorlens",
-        "eamodio.gitlens",
-        "streetsidesoftware.code-spell-checker",
-        "IBM.output-colorizer",
-        "dzhavat.bracket-pair-toggler",
-        "donjayamanne.githistory",
-        "mhutchie.git-graph",
-        "oderwat.indent-rainbow"
+        "ms-dotnettools.csharp"
       ]
     }
   },

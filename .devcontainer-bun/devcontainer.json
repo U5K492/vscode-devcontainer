@@ -15,12 +15,6 @@
         "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim"
       },
       "extensions": [
-        "asvetliakov.vscode-neovim",
-        "ms-vsliveshare.vsliveshare",
-        "usernamehw.errorlens",
-        "eamodio.gitlens",
-        "streetsidesoftware.code-spell-checker",
-        "IBM.output-colorizer"
       ]
     }
   },
