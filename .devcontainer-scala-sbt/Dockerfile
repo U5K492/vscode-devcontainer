@@ -29,7 +29,8 @@ RUN cd /home && \
 # RUN sudo apt update && apt install -y --no-install-recommends \
 #     ninja-build gettext cmake unzip build-essential ca-certificates
 #
-# RUN git clone https://github.com/neovim/neovim.git && \
+# RUN cd /home && \
+#     git clone https://github.com/neovim/neovim.git && \
 #     cd neovim && \
 #     git checkout stable && \
 #     make CMAKE_BUILD_TYPE=RelWithDebInfo && \

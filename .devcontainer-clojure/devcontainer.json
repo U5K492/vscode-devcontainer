@@ -1,5 +1,5 @@
 {
-  "name": "vscode-devcontainer-scala-sbt",
+  "name": "vscode-devcontainer-clojure",
   "build": {
     "dockerfile": "Dockerfile",
     "args": {
@@ -13,18 +13,18 @@
       "settings": {
         "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
         "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
-        "liveshare.languages.allowGuestCommandControl": true
+        "liveshare.languages.allowGuestCommandControl": true,
+        "calva.useLiveShare": true
       },
       "extensions": [
-        "vscjava.vscode-java-pack",
-        "scala-lang.scala",
-        "scalameta.metals"
+        "ms-azuretools.vscode-docker",
+        "betterthantomorrow.calva"
       ]
     }
   },
   "features": {},
   "runArgs": [
     "--network=host",
-    "--name=vscode-devcontainer-scala-sbt"
+    "--name=vscode-devcontainer-clojure"
   ]
 }

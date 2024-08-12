@@ -12,7 +12,8 @@
     "vscode": {
       "settings": {
         "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
-        "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim"
+        "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
+        "liveshare.languages.allowGuestCommandControl": true
       },
       "extensions": [
       ]

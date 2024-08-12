@@ -1,10 +1,6 @@
-FROM node:bookworm-slim as node
-FROM debian:bookworm-slim
+FROM clojure:temurin-21-lein-2.11.2-bookworm-slim
 
 ARG user
-
-COPY --from=node /usr/local/bin /usr/local/bin
-COPY --from=node /usr/local/lib/node_modules/npm /usr/local/lib/node_modules/npm
 
 RUN apt-get update && \
     apt-get install -y --purge --no-install-recommends \
@@ -24,11 +20,10 @@ RUN useradd -m -s /bin/bash ${user} && \
     chmod 0440 /etc/sudoers.d/users && \
     visudo -c
 
-RUN npm i -g bun
-
-RUN curl -LO https://github.com/neovim/neovim/releases/download/v0.10.1/nvim-linux64.tar.gz && \
+RUN cd /home && \
+    curl -LO https://github.com/neovim/neovim/releases/download/v0.10.1/nvim-linux64.tar.gz && \
     tar xzvf nvim-linux64.tar.gz && \
-    sudo ln -s /nvim-linux64/bin/nvim /usr/local/bin/nvim
+    sudo ln -s /home/nvim-linux64/bin/nvim /usr/local/bin/nvim
 
 ## arm64 nvim build setting
 # RUN sudo apt update && apt install -y --no-install-recommends \
