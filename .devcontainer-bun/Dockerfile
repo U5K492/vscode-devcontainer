@@ -34,8 +34,7 @@ RUN curl -LO https://github.com/neovim/neovim/releases/download/v0.10.1/nvim-lin
 # RUN sudo apt update && apt install -y --no-install-recommends \
 #     ninja-build gettext cmake unzip build-essential ca-certificates
 #
-# RUN cd /home && \
-#     git clone https://github.com/neovim/neovim.git && \
+# RUN git clone https://github.com/neovim/neovim.git && \
 #     cd neovim && \
 #     git checkout stable && \
 #     make CMAKE_BUILD_TYPE=RelWithDebInfo && \

@@ -1,6 +1,16 @@
-FROM mcr.microsoft.com/dotnet/sdk:8.0.303-bookworm-slim
+FROM haskell:slim-bullseye
 
 ARG user
+
+ARG GHC_VERSION=9.4.8 \
+    CABAL_VERSION=3.8.1.0 \
+    HLS_VERSION=2.7.0.0
+
+ENV PATH="${PATH}:/root/.ghcup/bin:/root/.cabal/bin:/root/.ghc/bin" \
+    BOOTSTRAP_HASKELL_NONINTERACTIVE=1 \
+    BOOTSTRAP_HASKELL_GHC_VERSION=${GHC_VERSION} \
+    BOOTSTRAP_HASKELL_CABAL_VERSION=${CABAL_VERSION} \
+    BOOTSTRAP_HASKELL_INSTALL_HLS=${HLS_VERSION}
 
 RUN apt-get update && \
     apt-get install -y --purge --no-install-recommends \
@@ -18,6 +28,11 @@ RUN useradd -m -s /bin/bash ${user} && \
     echo "${user}\tALL=(ALL:ALL) NOPASSWD:ALL" > /etc/sudoers.d/users && \
     chmod 0440 /etc/sudoers.d/users && \
     visudo -c
+
+RUN curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh \
+    cabal update && \
+    stack config set install-ghc false --global && \
+    stack config set system-ghc true --global
 
 RUN curl -LO https://github.com/neovim/neovim/releases/download/v0.10.1/nvim-linux64.tar.gz && \
     tar xzvf nvim-linux64.tar.gz && \

@@ -20,8 +20,7 @@ RUN useradd -m -s /bin/bash ${user} && \
     chmod 0440 /etc/sudoers.d/users && \
     visudo -c
 
-RUN cd /home && \
-    curl -LO https://github.com/neovim/neovim/releases/download/v0.10.1/nvim-linux64.tar.gz && \
+RUN curl -LO https://github.com/neovim/neovim/releases/download/v0.10.1/nvim-linux64.tar.gz && \
     tar xzvf nvim-linux64.tar.gz && \
     sudo ln -s /home/nvim-linux64/bin/nvim /usr/local/bin/nvim
 
@@ -29,8 +28,7 @@ RUN cd /home && \
 # RUN sudo apt update && apt install -y --no-install-recommends \
 #     ninja-build gettext cmake unzip build-essential ca-certificates
 #
-# RUN cd /home && \
-#     git clone https://github.com/neovim/neovim.git && \
+# RUN git clone https://github.com/neovim/neovim.git && \
 #     cd neovim && \
 #     git checkout stable && \
 #     make CMAKE_BUILD_TYPE=RelWithDebInfo && \

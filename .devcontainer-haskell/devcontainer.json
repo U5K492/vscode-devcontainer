@@ -1,0 +1,30 @@
+{
+  "name": "vscode-devcontainer-haskell",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {
+      "user": "${localEnv:USER}"
+    }
+  },
+  "remoteUser": "${localEnv:USER}",
+  "updateRemoteUserUID": true,
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "vscode-neovim.neovimExecutablePaths.linux": "/usr/local/bin/nvim",
+        "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
+        "liveshare.languages.allowGuestCommandControl": true
+      },
+      "extensions": [
+        "haskell.haskell",
+        "justusadam.language-haskell"
+      ]
+    }
+  },
+  "features": {},
+  "runArgs": [
+    "--network=host",
+    "--name=vscode-devcontainer-haskell"
+  ]
+}
+
