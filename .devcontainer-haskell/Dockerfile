@@ -4,13 +4,14 @@ ARG user
 
 ARG GHC_VERSION=9.8.2 \
     CABAL_VERSION=3.10.3.0 \
-    HLS_VERSION=2.9
+    HLS_VERSION=2.9.0.1
 
 ENV PATH="${PATH}:/home/${user}/.ghcup/bin:/home/${user}/.cabal/bin:/home/${user}/.ghc/bin" \
     BOOTSTRAP_HASKELL_NONINTERACTIVE=1 \
     BOOTSTRAP_HASKELL_GHC_VERSION=${GHC_VERSION} \
     BOOTSTRAP_HASKELL_CABAL_VERSION=${CABAL_VERSION} \
-    BOOTSTRAP_HASKELL_INSTALL_HLS=${HLS_VERSION}
+    BOOTSTRAP_HASKELL_INSTALL_HLS=true \
+    BOOTSTRAP_HASKELL_HLS_VERSION=${HLS_VERSION}
 
 RUN apt-get update && \
     apt-get install -y --purge --no-install-recommends \
