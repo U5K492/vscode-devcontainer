@@ -22,7 +22,7 @@ RUN useradd -m -s /bin/bash ${user} && \
 
 RUN curl -LO https://github.com/neovim/neovim/releases/download/v0.10.1/nvim-linux64.tar.gz && \
     tar xzvf nvim-linux64.tar.gz && \
-    sudo ln -s /home/nvim-linux64/bin/nvim /usr/local/bin/nvim
+    sudo ln -s /nvim-linux64/bin/nvim /usr/local/bin/nvim
 
 ## arm64 nvim build setting
 # RUN sudo apt update && apt install -y --no-install-recommends \
